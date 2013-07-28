@@ -48,7 +48,7 @@ public class JFileTransferFrame extends JFrame
 	}
 
 	public void addObservable(ActivityObservable ob)
-	{		
+	{
 		barPanels.add(new BarPanel());
 		ob.addObserver(model);
 	}

@@ -80,7 +80,7 @@ public class JFileTransferTableModel extends AbstractTableModel implements Activ
 			case TOTAL:
 				return "Totali";
 			case SPEED:
-				return "Velocità";
+				return "Velocita'";
 			case PROGRESS:
 				return "Avanzamento";
 			default:
