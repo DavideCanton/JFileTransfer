@@ -339,8 +339,11 @@ public class JFileTransferFrame extends JFrame
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
         {
             super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-            setText(Formatters.formatSize((Long) value));
-            setHorizontalAlignment(CENTER);
+            if(value != null)
+            {
+                setText(Formatters.formatSize((Long) value));
+                setHorizontalAlignment(CENTER);
+            }
             return this;
         }
     }

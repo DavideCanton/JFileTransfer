@@ -3,7 +3,6 @@ package com.mdcc.jfiletransfer.gui;
 import com.mdcc.jfiletransfer.gui.dialog.*;
 
 import java.awt.*;
-import java.awt.event.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -246,9 +245,7 @@ public class ObservableDialog extends AbstractCustomDialogManager
     @Override
     protected void ok(JDialog dialog)
     {
-        Object selectedItem = ip.getSelectedItem();
-        Objects.requireNonNull(selectedItem);
-        boolean ok = !isSender() || selectedItem.toString().matches(IP);
+        boolean ok = !isSender() || ip.getSelectedItem().toString().matches(IP);
         int portNumber = -1;
         try
         {
@@ -270,7 +267,7 @@ public class ObservableDialog extends AbstractCustomDialogManager
             try
             {
 
-                observable = isSender() ? new SenderImpl(InetAddress.getByName(selectedItem.toString()), portNumber) : new ReceiverImpl(portNumber);
+                observable = isSender() ? new SenderImpl(InetAddress.getByName(ip.getSelectedItem().toString()), portNumber) : new ReceiverImpl(portNumber);
             } catch (UnknownHostException ignored)
             {
             }
