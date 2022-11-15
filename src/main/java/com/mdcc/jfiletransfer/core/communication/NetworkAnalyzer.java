@@ -114,7 +114,7 @@ public class NetworkAnalyzer
     {
         try
         {
-            HttpURLConnection conn = (HttpURLConnection) new URL("http://automation.whatismyip.com/n09230945.asp").openConnection();
+            HttpURLConnection conn = (HttpURLConnection) new URL("http://api.ipify.org").openConnection();
             BufferedReader b = new BufferedReader(new InputStreamReader(conn.getInputStream()));
             String s = b.readLine();
             conn.disconnect();
